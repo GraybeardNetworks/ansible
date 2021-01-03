@@ -1,0 +1,7 @@
+### Graybeard's Hosts ###
+[firewall]
+172.17.2.10
+
+[switches]
+172.17.2.11
+172.17.2.12
