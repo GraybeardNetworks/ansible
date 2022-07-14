@@ -1,7 +1,19 @@
-### Graybeard's Hosts ###
-[firewall]
-172.17.2.10
+# Graybeard's Hosts
+# =================
+[cisco]
 
-[switches]
-172.17.2.11
-172.17.2.12
+[cisco:vars]
+ansible_user=admin
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_port=22
+
+[cisco:children]
+asa
+ios
+
+[asa]
+gbn-fw1 ansible_host=172.17.2.5
+
+[ios]
+gbn-swt2 ansible_host=172.17.2.3
