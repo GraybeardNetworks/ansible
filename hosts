@@ -27,7 +27,7 @@ ansible_port=22
 
 gbn-fw1 ansible_host=172.17.2.10
 
-[unifi]
+[edgeos]
 gbn-sg1 ansible_host=172.17.2.1
 gbn-swt1 ansible_host=172.17.2.2
 gbn-ap1 ansible_host=172.17.2.100
