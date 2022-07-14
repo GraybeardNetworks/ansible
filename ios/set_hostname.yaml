@@ -1,6 +1,6 @@
 ---
 - name: Change Hostname to Inventory Hostname
-  hosts: catalyst
+  hosts: ios
   connection: network_cli
   gather_facts: no
   
