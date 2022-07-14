@@ -1,0 +1,14 @@
+---
+- name: Gather and Display IOS Facts
+  hosts: catalyst
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+  - name: Retrieve ios_facts
+    ios_facts:
+    register: facts
+    
+  - name: Print results of ios_facts
+    debug:
+      msg: "{{ facts }}"
