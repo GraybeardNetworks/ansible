@@ -1,0 +1,17 @@
+---
+- name: Backup FortiOS Configuration to File
+  hosts: fortios
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Backing up configuration
+      fortios_config:
+        backup: yes
+        backup_path: ./backup/
+        backup_filename: "{{inventory_hostname}}.conf"
+      register: config_output
+    - name: Writing file
+      copy:
+        src: "{{config_output.backup_path}}"
+        dest: "./backup/{{inventory_hostname}}.config"
