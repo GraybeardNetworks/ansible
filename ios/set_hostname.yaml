@@ -1,0 +1,10 @@
+---
+- name: Change Hostname to Inventory Hostname
+  hosts: catalyst
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+  - name: configure {{ inventory_hostname }} hostname
+    ios_config:
+      lines: hostname {{ inventory_hostname }}
