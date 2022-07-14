@@ -1,0 +1,30 @@
+---
+- name: Backup IOS Configuration to File
+  hosts: catalyst
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Backing up configuration using CLI
+      cli_command:
+        command: show run
+      register: backup
+
+    - name: Writing to file
+      copy:
+        content: "{{ backup.stdout }}"
+        dest: "./backup/{{ inventory_hostname }}.{{ lookup('pipe','date +%Y-%m-%d@%H:%M') }}.conf"
+        
+    - name: Removing non-configuration lines
+      lineinfile:
+        path: "./backup/{{ inventory_hostname }}.{{ lookup('pipe','date +%Y-%m-%d@%H:%M') }}.conf"
+        line: "Building configuration..."
+        state: absent
+
+    - name: Removing non-configuration lines using regular expressions
+      lineinfile:
+        path: "./backup/{{ inventory_hostname }}.{{ lookup('pipe','date +%Y-%m-%d@%H:%M') }}.conf"
+        regexp: 'Current configuration.*'
+        state: absent
+ 
+ # Credit to Nate Helfrey and Roy Shaver
