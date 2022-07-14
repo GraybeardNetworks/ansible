@@ -1,0 +1,15 @@
+
+---
+- name: Gather and Display EdgeOS Facts
+  hosts: edgeos
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+  - name: Retrieve edge_facts
+    edge_facts:
+    register: facts
+    
+  - name: Print results of ios_facts
+    debug:
+      msg: "{{ facts }}"
