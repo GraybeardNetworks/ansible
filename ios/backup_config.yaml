@@ -1,6 +1,6 @@
 ---
 - name: Backup IOS Configuration to File
-  hosts: catalyst
+  hosts: ios
   connection: network_cli
   gather_facts: no
 
