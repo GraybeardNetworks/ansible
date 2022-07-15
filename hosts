@@ -7,6 +7,7 @@ ansible_user=admin
 ansible_network_os=ios
 ansible_connection=network_cli
 ansible_port=22
+ansible_enable=yes
 
 [cisco:children]
 asa
