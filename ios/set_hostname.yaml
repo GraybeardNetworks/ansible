@@ -1,7 +1,6 @@
 ---
 - name: Change hostname to Inventory hostname
   hosts: ios
-  become: yes
   become_method: enable
   connection: network_cli
   gather_facts: no
