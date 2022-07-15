@@ -2,7 +2,7 @@
 - name: Change hostname to Inventory hostname
   hosts: ios
   become_method: enable
-  ansible_connection: local
+  connection: local
   gather_facts: no
   
   tasks:
