@@ -5,6 +5,6 @@
   gather_facts: no
 
 - tasks:
-    - name: configure {{ inventory_hostname }} hostname
+    - name: configure "{{ inventory_hostname }}"hostname
       ios_config:
       lines: ansible_net_hostname {{ inventory_hostname }}
