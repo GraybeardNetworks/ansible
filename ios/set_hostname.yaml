@@ -1,6 +1,8 @@
 ---
 - name: Change hostname to Inventory hostname
   hosts: ios
+  ansible_become: yes
+  ansible_become_method: enable
   become_method: enable
   connection: network_cli
   gather_facts: no
