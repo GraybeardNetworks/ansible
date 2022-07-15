@@ -3,9 +3,9 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
+  ansible_become: yes
   
   tasks:
   - name: configure {{ inventory_hostname }} hostname
-    ansible_become: yes
     ios_config:
       lines: hostname {{ inventory_hostname }}
