@@ -7,8 +7,9 @@
   gather_facts: no
 
   tasks:
-    - name: configure hostname
+    - name: enter enable mode
       provider:
         authorize: true
+    - name: configure hostname
       ios_config:
         lines: net_hostname {{ inventory_hostname }}
