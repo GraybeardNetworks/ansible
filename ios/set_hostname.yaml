@@ -9,6 +9,5 @@
   tasks:
   - name: configure hostname
     ios_config:
-      provider:
-          authorize: true
+      authorize: true
       lines: net_hostname {{ inventory_hostname }}
