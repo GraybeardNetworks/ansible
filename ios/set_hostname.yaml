@@ -9,4 +9,4 @@
       provider:
         authorize: yes
       ios_config:
-        lines: ansible_net_hostname "{{ inventory_hostname }}"
+        lines: ansible_net_hostname {{ inventory_hostname }}
