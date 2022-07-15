@@ -2,7 +2,6 @@
 - name: Change hostname to Inventory hostname
   hosts: ios
   become_method: enable
-  become: yes
   connection: network_cli
   gather_facts: no
   
@@ -10,3 +9,4 @@
   - name: configure hostname
     ios_config:
       lines: hostname {{ inventory_hostname }}
+      become: yes
