@@ -6,6 +6,7 @@
   
   tasks:
   - name: configure {{ inventory_hostname }} hostname
-    ansible_become: yes
+    provider:
+      authorize: yes
     ios_config:
       lines: hostname {{ inventory_hostname }}
