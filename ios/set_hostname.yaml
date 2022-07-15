@@ -1,5 +1,5 @@
 ---
-- name: Change Hostname to Inventory Hostname
+- name: Change hostname to Inventory hostname
   hosts: ios
   connection: network_cli
   gather_facts: no
