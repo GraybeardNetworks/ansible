@@ -7,4 +7,4 @@
 - tasks:
     - name: configure hostname
       ios_config:
-      lines: ansible_net_hostname {{ inventory_hostname }}
+        lines: ansible_net_hostname {{ inventory_hostname }}
