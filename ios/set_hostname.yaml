@@ -7,7 +7,7 @@
   gather_facts: no
   
   tasks:
-    name: configure hostname
+  - name: configure hostname
     ios_config:
       provider:
           authorize: true
