@@ -3,8 +3,8 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
-  
-  tasks:
+
+- tasks:
     - name: configure hostname
       ansible_enable: yes
       ios_config:
