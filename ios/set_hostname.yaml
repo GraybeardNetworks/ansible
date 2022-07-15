@@ -7,8 +7,8 @@
   
   tasks:
   - name: enter enable mode
-      provider:
-        authorize: yes
+    provider:
+      authorize: yes
 
   - name: configure hostname
     ios_config:
