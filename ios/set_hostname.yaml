@@ -6,7 +6,7 @@
   connection: network_cli
   gather_facts: no
   
-tasks:
+  tasks:
     name: configure hostname
     ios_config:
       provider:
