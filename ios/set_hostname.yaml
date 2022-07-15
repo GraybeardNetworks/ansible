@@ -5,9 +5,10 @@
   become_method: enable
   connection: network_cli
   gather_facts: no
-
-    - name: configure hostname
-      ios_config:
-        provider:
+  
+tasks:
+    name: configure hostname
+    ios_config:
+      provider:
           authorize: true
-        lines: net_hostname {{ inventory_hostname }}
+      lines: net_hostname {{ inventory_hostname }}
