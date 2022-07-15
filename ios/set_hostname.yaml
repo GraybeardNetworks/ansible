@@ -5,8 +5,8 @@
   gather_facts: no
   
   tasks:
-    - name: configure "{{ inventory_hostname }}" hostname
+    - name: configure {{ ansible_inventory_hostname }} hostname
       provider:
         authorize: yes
       ios_config:
-        lines: hostname "{{ inventory_hostname }}"
+        lines: ansible_net_hostname "{{ inventory_hostname }}"
