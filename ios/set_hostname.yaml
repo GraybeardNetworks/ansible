@@ -4,7 +4,7 @@
   connection: network_cli
   gather_facts: no
 
-- tasks:
+  tasks:
     - name: configure hostname
       ios_config:
         lines: net_hostname {{ inventory_hostname }}
