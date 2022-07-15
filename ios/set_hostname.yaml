@@ -6,6 +6,5 @@
 
 - tasks:
     - name: configure hostname
-        ansible_enable: yes
         ios_config:
           lines: ansible_net_hostname {{ inventory_hostname }}
