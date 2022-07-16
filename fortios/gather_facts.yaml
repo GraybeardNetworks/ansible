@@ -1,0 +1,14 @@
+---
+- name: Gather and Display FortiOS Facts
+  hosts: fortios
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+  - name: Retrieve ios_facts
+    fortios_facts:
+    register: facts
+    
+  - name: Print results of fortios_facts
+    debug:
+      msg: "{{ facts }}"
