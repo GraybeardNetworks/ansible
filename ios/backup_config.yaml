@@ -3,6 +3,7 @@
   hosts: ios
   connection: network_cli
   gather_facts: no
+  become: true
 
   tasks:
     - name: Backing up configuration using CLI
