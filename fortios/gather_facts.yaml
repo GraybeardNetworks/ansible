@@ -7,7 +7,7 @@
   tasks:
   - name: Retrieve ios_facts
     fortios_facts:
-    register: facts
+      register: facts
     
   - name: Print results of fortios_facts
     debug:
