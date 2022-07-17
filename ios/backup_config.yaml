@@ -28,4 +28,4 @@
         regexp: 'Current configuration.*'
         state: absent
  
- # Credit to Nate Helfrey and Roy Shaver
+ # Credit to Nate Helfrey and Roy Shaver for removal technique
