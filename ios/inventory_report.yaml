@@ -1,6 +1,6 @@
 ---
 - name: Switch Report - IOS
-  hosts: catalyst
+  hosts: ios
   connection: network_cli
   gather_facts: no
 
