@@ -1,0 +1,22 @@
+---
+- name: Switch Report - IOS
+  hosts: catalyst
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+  - name: Retrieving ios_facts from switch
+    ios_facts:
+    register: switch_facts
+
+  - name: Creating report file and header
+    blockinfile:
+      dest: ./reports/{{ inventory_hostname }}.{{ lookup('pipe','date +%Y-%m-%d@%H:%M') }}.switch_report.txt
+      block: |
+        ___{{ inventory_hostname }}_Switch_Report___
+        {{ lookup('pipe','date +%Y-%m-%d@%H:%M') }}   
+        
+         - Hostname: {{ hostvars[host].ansible_net_hostname }}
+         - Switch Model: {{ hostvars[host].ansible_net_model }}
+         - OS Version: {{ hostvars[host].ansible_net_version }}
+         - Serial Number: {{ hostvars[host].ansible_net_serialnum }}
