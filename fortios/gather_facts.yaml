@@ -9,8 +9,7 @@
      fortios_facts:
        gather_subset:
          - fact: system_status_select
-     register: facts
     
   -  name: Print results of fortios_facts
      debug:
-      msg: "{{ facts }}"
+      msg: "{{ system_status_select }}"
