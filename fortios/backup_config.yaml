@@ -7,6 +7,7 @@
   tasks:
     - name: Backing up configuration
       fortios_config:
+        filemode: true
         backup: yes
         backup_path: ./backup/
         backup_filename: "{{inventory_hostname}}.conf"
