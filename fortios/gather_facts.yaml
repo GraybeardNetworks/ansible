@@ -5,7 +5,7 @@
   gather_facts: no
   
   tasks:
-  -  name: Retrieve ios_facts
+  -  name: Gather fortios_facts
      fortios_facts:
        gather_subset:
          - fact: system_status_select
