@@ -21,11 +21,6 @@ gbn-swt2  ansible_host=172.17.2.3
 
 
 [fortios]
-
-# [fortios:vars]
-# ansible_user=admin
-# ansible_port=22
-
 gbn-fw1   ansible_host=172.17.2.10
 
 
