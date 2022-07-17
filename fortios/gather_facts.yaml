@@ -8,7 +8,7 @@
   -  name: Gather fortios_facts
      fortios_facts:
        gather_subset:
-         - fact: system_status_select
+         - fact: 'system_status_select'
     
   -  name: Print results of fortios_facts
      debug:
