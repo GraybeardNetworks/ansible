@@ -7,7 +7,6 @@
   tasks:
   - name: Retrieving ios_facts from switch
     ios_facts:
-    register: switch_facts
 
   - name: Creating report file and header
     blockinfile:
